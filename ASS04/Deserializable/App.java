@@ -51,3 +51,32 @@ public class App {
 	}
 
 }
+
+/*
+OUTPUT
+
+
+   Roll Number : 101
+   Name : AAA	
+   Per : 70.0
+  ---------------
+  Roll Number : 102
+  Name : BBB
+  Per : 90.0
+  ---------------
+  Roll Number : 103
+  Name : CCC
+  Per : 80.0
+  ---------------
+  Roll Number : 104
+  Name : DDD
+  Per : 100.0
+  ---------------
+  Roll Number : 105
+  Name : EEE
+  Per : 88.0
+  ---------------
+  Records are Finished
+
+
+ */
