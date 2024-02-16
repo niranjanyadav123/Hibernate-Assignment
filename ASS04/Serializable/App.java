@@ -62,3 +62,14 @@ public class App {
 		
     }
 }
+
+
+/* OUTPUT : 
+
+ Object has been serialized !!
+Object has been serialized !!
+Object has been serialized !!
+Object has been serialized !!
+Object has been serialized !!
+
+ */
