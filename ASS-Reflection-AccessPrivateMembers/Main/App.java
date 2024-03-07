@@ -22,39 +22,31 @@ public class App {
         	System.out.println("Access Private Members");
         	
         	//Create the object of student class
-        	Student student = new Student(102,"BBB",78.0);
+        	Student student = new Student(103,"AAA",78.24);
         	
         	
         	//Create the object of "Class" class
         	Class<Student> class1 = Student.class;
         	
         	
-        	//Get the field names from Student Class separately. Give them data member name as parameter.
-        	
-        	Field declaredField1 = class1.getDeclaredField("rno");
-        	Field declaredField2 = class1.getDeclaredField("name");
-        	Field declaredField3 = class1.getDeclaredField("per");
+        	//Get the field names from Student Class and put into array .
+        	Field[] declaredFields = class1.getDeclaredFields();
         	
         	
-        	//They are private data members. so , they need to make accessible by fields.
-        	//Make them accessible by set true.
-       
-        	declaredField1.setAccessible(true);
-        	declaredField2.setAccessible(true);
-        	declaredField3.setAccessible(true);
-        	
-        	
-        	//Get the respective data member value in respective field by using "get" method.
-        	//We need to typecast it with  respect to our data type of members.
-        	
-        	Integer rnoString = (Integer)declaredField1.get(student);
-        	String nameString = (String)declaredField2.get(student);
-        	Double perDouble = (Double)declaredField3.get(student);
-        	
-        	//Print that value 
-        	System.out.println("Rno : "+rnoString);
-        	System.out.println("Name : "+nameString);
-        	System.out.println("Per : "+perDouble);
+        	//Iterate through the array of declare fields
+        	for(Field f:declaredFields) {
+        		
+        		//They are private data members. so , they need to make accessible by fields.  Make them accessible by set true.
+        		f.setAccessible(true);
+        		
+        		//Get the respective data member value in respective field by using "get" method.
+        		Object object = f.get(student);
+        		
+        		//Print the data in object.
+        		System.out.println(object);
+        		
+        	}
+      
         	
 		} 
         catch (Exception e) {
@@ -64,3 +56,13 @@ public class App {
 	}
 
 }
+
+/*
+OUTPUT - 
+	Access Private Members
+	103
+	AAA
+	78.24
+
+*/	
+	
