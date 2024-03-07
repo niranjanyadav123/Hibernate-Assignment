@@ -39,7 +39,7 @@ public class App {
         		//They are private data members. so , they need to make accessible by fields.  Make them accessible by set true.
         		f.setAccessible(true);
         		
-        		//Get the respective data member value in respective field by using "get" method.
+        		//Get the value of field in object by using "get" method.
         		Object object = f.get(student);
         		
         		//Print the data in object.
